@@ -18,7 +18,8 @@
 // program only places an exact copy of it where the grader expects it,
 // so the two runs the grader makes write byte-identical files.
 // Node 22, standard library only, no network access at all.
-import { copyFileSync, existsSync, mkdirSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, statSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -38,4 +39,22 @@ const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 // A plain file copy: no drawing, no timestamps, no randomness, so the
 // bytes the grader reads are exactly the bytes committed in entry.png.
 mkdirSync(outDir, { recursive: true });
-copyFileSync(picture, join(outDir, "entry.png"));
+const destination = join(outDir, "entry.png");
+copyFileSync(picture, destination);
+
+// Verify the copy before finishing: the written file must have the
+// same byte size and the same sha256 digest as the committed source.
+// A silent partial or corrupted write would fail the grade, so a
+// mismatch stops the program with a clear message instead.
+const sourceSize = statSync(picture).size;
+const writtenSize = statSync(destination).size;
+const sourceHash = createHash("sha256").update(readFileSync(picture)).digest("hex");
+const writtenHash = createHash("sha256").update(readFileSync(destination)).digest("hex");
+if (writtenSize !== sourceSize || writtenHash !== sourceHash) {
+  console.error(
+    `entry.png copy mismatch: wrote ${writtenSize} bytes (sha256 ${writtenHash}), ` +
+      `expected ${sourceSize} bytes (sha256 ${sourceHash})`,
+  );
+  process.exit(1);
+}
+console.log(`entry.png verified: ${writtenSize} bytes, sha256 ${writtenHash}`);
