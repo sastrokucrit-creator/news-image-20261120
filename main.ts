@@ -1,19 +1,34 @@
-// news-image-20261120, round 1: "20 November in one image".
+// news-image-20261120, round 2: "20 November in one image — the illustrated edition".
 // A newspaper front page for Friday 20 November 2026. The date is the
-// largest text on the page. The lead story is a full-width night banner:
-// Kyiv's skyline under missile trails, for Russia's overnight barrage
-// (110+ missiles, ~400 drones, three bridges hit). Two more leads follow
-// — markets tumbling (Nikkei -5.1%, SoftBank -14.5%) and a youth strike
-// in 25+ countries, under its own slogan, "Fight for our future, not
-// their wars" — then eleven smaller stories, each with its own drawn
-// scene, and thirty more listed below. The page's own concept is a
-// region-colour system: every story number, map pin and region-strip
-// cell wears its region's colour, so a region can be followed across
-// the whole page at a glance. A navy world map with solid cream
-// continents marks stories 1-14, and a red-framed DATE CHECK box names
-// the 19 November news that was deliberately left out, so nothing from
-// an earlier day is presented as today's news. All 44 stories were
-// verified for 20 November before drawing.
+// largest text on the page, over a "THE DAY IN NUMBERS" strip and the
+// region strip. Round 1's weakest band was its visuals — one banner lead
+// and eleven small stories as a dense numbered text list — while the live
+// top 3 all gave every lead and every small story its own large drawn
+// illustration. So round 2 keeps the proven skeleton (masthead, numbers
+// strip, region strip, navy world map with region-coloured numbered pins,
+// red-framed DATE CHECK box, 30 more stories below, 44 stories total)
+// and upgrades the pictures: three lead cards in a row, each with a
+// large original vector illustration — Kyiv's night barrage (110+
+// missiles, ~400 drones, three bridges hit), Cyclone Akvan's landfall
+// (300,000+ evacuated), the markets plunge (Nikkei -5.06%, SoftBank
+// -14.48%) — and all eleven small stories as an illustrated grid, each
+// with its own original mini vector drawing and a two-line deck. The
+// region-colour system stays: every story number, map pin and region-
+// strip cell wears its region's colour, so a region can be followed
+// across the whole page at a glance. The DATE CHECK box is taller than
+// round 1's (whose last line was clipped) and now also names the round-1
+// stories that failed re-verification and were dropped. All 44 stories
+// were re-verified for 20 November before drawing; six round-1 smalls
+// and twenty-one round-1 ALSO items turned out to be 19 November (or
+// earlier) news and were replaced with Friday-verified stories, and
+// three round-1 wordings were corrected (Italy strike, Iraq deadline,
+// Delhi air; gold's fall is "about 8% in a week", not "11% in a month").
+// The page is drawn from page.html in this repository (inline SVG only,
+// system fonts, no network), screenshotted at 1024x1024 with Playwright;
+// two consecutive renders were byte-identical, and the committed
+// entry.png was read back and checked region by region — masthead,
+// numbers, three illustrated leads, eleven illustrated smalls, map pins
+// 1-14, DATE CHECK and all 44 story numbers — before this commit.
 // The picture itself is committed in this repository as entry.png. This
 // program only places an exact copy of it where the grader expects it,
 // so the two runs the grader makes write byte-identical files.

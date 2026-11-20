@@ -7,19 +7,26 @@
 A front-page poster summing up the world's news of Friday 20 November
 2026, for the make.fun bounty `news-image-20261120`.
 
-The lead story is a full-width night banner: Russia fires 110+ missiles
-and ~400 drones at Ukraine overnight, killing 8, wounding 28, hitting
-three Kyiv bridges and cutting power in the capital and 10 regions. The
+The lead stories are three illustrated cards in a row: Russia's night
+barrage over Kyiv (110+ missiles, ~400 drones, 8 killed, 28 hurt, three
+bridges hit), Cyclone Akvan's landfall in India (300,000+ evacuated),
+and markets tumbling worldwide (Nikkei −5.06%, SoftBank −14.48%). The
 masthead names the day — **FRIDAY 20 NOVEMBER 2026** — and the page
-carries 44 stories across 7 regions: markets tumbling (Nikkei −5.1%,
-SoftBank −14.5%), a youth strike in 25+ countries, COP31 closing with
-no deal, Italy's general strike, Cyclone Akvan's landfall, a gold-mine
-strike in Sudan, and a US–Venezuela military deal — plus a navy world
-map and 30 more stories. Every story number and map pin wears its
-region's colour. A red DATE CHECK box names the 19 November news (the
-Shenzhen trilateral, the ICJ's Myanmar verdict, Anthropic's debut, and
-more) that was deliberately left out, so nothing from an earlier day is
-presented as 20 November news.
+carries 44 stories across 7 regions: a youth strike in 25+ countries,
+COP31 closing with no deal, Poland on alert after Russian missiles fell
+on its soil, Italy's general strike, California shaking twice, a record
+Florida river, Taiwan flagging 2,700 influence accounts, Indonesia
+pressing Google over 19,000 removed channels, and gold sliding 4.2% —
+plus a navy world map and 30 more stories. Every story is drawn, not
+just listed: each lead has a large original vector illustration and each
+of the eleven smaller stories its own mini drawing. Every story number
+and map pin wears its region's colour. A red DATE CHECK box names the 19
+November news (the Shenzhen trilateral, the ICJ's Myanmar verdict,
+Anthropic's debut, and more) that was deliberately left out, so nothing
+from an earlier day is presented as 20 November news. Round 2 re-verified
+every story: six round-1 smalls and twenty-one round-1 ALSO items turned
+out to be 19 November (or earlier) news and were replaced with
+Friday-verified stories.
 
 `main.ts` (Node 22, standard library only) copies `entry.png` to
 `/output/entry.png` (or `$MAKEFUN_OUTPUT_DIR`). The image is a 1024×1024
